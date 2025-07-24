@@ -1,0 +1,43 @@
+#!/bin/bash
+# install
+# Author: Gh0st-0f-Th
+# License: MIT
+
+TOOL_NAME="csrcipher"
+INSTALL_NAME="csrcipher"
+
+echo "[*] Installing $INSTALL_NAME..."
+
+# Detect environment
+if [ "$PREFIX" == "/data/data/com.termux/files/usr" ]; then
+    echo "[√] Detected Termux"
+    TARGET_DIR="$PREFIX/bin"
+else
+    echo "[√] Detected standard Linux"
+
+    if [ "$EUID" -eq 0 ]; then
+        TARGET_DIR="/usr/local/bin"
+    else
+        TARGET_DIR="$HOME/.local/bin"
+        mkdir -p "$TARGET_DIR"
+    fi
+fi
+
+# Check existence and make executable
+if [ ! -f "$TOOL_NAME" ]; then
+    echo "[!] Error: $TOOL_NAME not found!"
+    exit 1
+fi
+
+chmod +x "$TOOL_NAME"
+cp "$TOOL_NAME" "$TARGET_DIR/$INSTALL_NAME"
+
+# Check if target dir is in PATH
+if ! echo "$PATH" | grep -q "$TARGET_DIR"; then
+    echo "[!] $TARGET_DIR not in PATH. Adding to ~/.bashrc"
+    echo "export PATH=\$PATH:$TARGET_DIR" >> ~/.bashrc
+    echo "[!] Reload your shell or run: source ~/.bashrc"
+fi
+
+echo "[+] $INSTALL_NAME installed to $TARGET_DIR/"
+echo "[√] You can now run it by typing: $INSTALL_NAME"
