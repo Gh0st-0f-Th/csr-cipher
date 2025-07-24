@@ -6,6 +6,7 @@ caeser() {
 	for i in b c d e f g h i j k l m n o p q r s t u v w x y z; do
 		j=$(tr [bcdefghijklmnopqrstuvwxyza] [a-z] <<< "$i")
 		tr "[a-z]" "[$i-za-$j]" <<< "$ab"
+		echo -e "\n---\n"
 	done
 }
 
@@ -13,5 +14,6 @@ usg='Usage: csrcipher "text" — brute-forces all Caesar cipher shifts on the in
 if [[ -z "$1" ]]; then
 	echo "$usg"
 else
+	echo -e "---\n"
 	caeser "$1"
 fi
