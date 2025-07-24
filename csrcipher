@@ -1,8 +1,17 @@
 #!/bin/bash
 
-ab=$(tr 'A-Z' 'a-z' <<< "$1")
+caeser() {
+	ab=$(tr 'A-Z' 'a-z' <<< "$1")
+	
+	for i in b c d e f g h i j k l m n o p q r s t u v w x y z; do
+		j=$(tr [bcdefghijklmnopqrstuvwxyza] [a-z] <<< "$i")
+		tr "[a-z]" "[$i-za-$j]" <<< "$ab"
+	done
+}
 
-for i in b c d e f g h i j k l m n o p q r s t u v w x y z; do
-	j=$(tr [bcdefghijklmnopqrstuvwxyza] [a-z] <<< "$i")
-	tr "[a-z]" "[$i-za-$j]" <<< "$ab"
-done
+usg='Usage: csrcipher "text" — brute-forces all Caesar cipher shifts on the input string.'
+if [[ -z "$1" ]]; then
+	echo "$usg"
+else
+	caeser $1
+fi
