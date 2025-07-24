@@ -13,5 +13,5 @@ usg='Usage: csrcipher "text" — brute-forces all Caesar cipher shifts on the in
 if [[ -z "$1" ]]; then
 	echo "$usg"
 else
-	caeser $1
+	caeser "$1"
 fi
