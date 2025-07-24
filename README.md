@@ -16,7 +16,7 @@ This script takes a string and applies all 25 Caesar cipher shifts to it, conver
 
 Clone the repository:
 
-    git clone https://github.com/Gh0st-0f-Th/csr-cipher.git
+    git clone --depth=1 https://github.com/Gh0st-0f-Th/csr-cipher.git
     cd csr-cipher
 
 Make the script executable:
