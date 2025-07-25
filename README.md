@@ -1,7 +1,7 @@
 $ cat README.md
 # csr-cipher
 
-A simple brute-force Caesar cipher decryption tool written in Bash.
+A simple brute-force Caesar cipher encryption and decryption tool written in Bash.
 
 This script takes a string and applies all 25 Caesar cipher shifts to it, converting the string to lowercase first. It's useful for solving basic substitution ciphers, beginner CTF challenges, or for learning purposes.
 
