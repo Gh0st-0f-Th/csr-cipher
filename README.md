@@ -10,7 +10,7 @@ This script takes a string and applies all 25 Caesar cipher shifts to it, conver
 - Brute-forces all Caesar cipher shifts (1 through 25).
 - Converts input to lowercase for consistency.
 - Uses only built-in Bash and `tr`.
-- Portable: works on any Unix-like system (Linux, macOS, Termux, etc.).
+- Portable: works on any linux-like system (Linux, Termux, etc.).
 
 ## Installation
 
