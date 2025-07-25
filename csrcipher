@@ -24,5 +24,5 @@ else
 	echo -e "${YELLOW}***\n\n TWENTYFIVE CAESAR SHIFTS BELOW:${RESET}"
 	echo -e "${CYAN}\n---\n${RESET}"
 	caeser "$1"
-	echo -e " ${YELLOW}LOOK FOR HUMAN READABLE TEXTS ABOVE.\n\n***${RESET}"
+	echo -e " ${YELLOW}LOOK FOR HUMAN READABLE TEXTS ABOVE, IF YOU'RE DECRYPTING.\n\n***${RESET}"
 fi
